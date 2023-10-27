@@ -11,7 +11,7 @@ if pidof -o %PPID -x "$0"; then
 fi
 
 LOGFILE="/root/logs/gclone-upload.log"
-FROM="/root/Downloads/"
+FROM="/content/udemy-downloader/out_dir"
 TO="upload:{0AEb5NdRY8icDUk9PVA}"
 
 # CHECK FOR FILES IN FROM FOLDER THAT ARE OLDER THAN 15 MINUTES
