@@ -19,7 +19,7 @@ if find $FROM* -type f -mmin +1 | read
   start=$(date +'%s')
   echo "$(date "+%d.%m.%Y %T") GCLONE UPLOAD STARTED" | tee -a $LOGFILE
   # MOVE FILES OLDER THAN 10 MINUTES 
-  rclone move "$FROM" "$TO" --filter "- *.part" --transfers=5 --checkers=5 --delete-after --min-age 1m --log-file=$LOGFILE
+  rclone move "$FROM" "$TO" --filter "- *.m4a" --transfers=5 --checkers=5 --delete-after --min-age 1m --log-file=$LOGFILE
   echo "$(date "+%d.%m.%Y %T") GCLONE UPLOAD FINISHED IN $(($(date +'%s') - $start)) SECONDS" | tee -a $LOGFILE
 fi
 exit
