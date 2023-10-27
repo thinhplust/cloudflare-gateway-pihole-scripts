@@ -10,7 +10,6 @@ if pidof -o %PPID -x "$0"; then
    exit 1
 fi
 
-LOGFILE="/root/logs/gclone-upload.log"
 FROM="/content/udemy-downloader/out_dir"
 TO="colab:{0AEccOAma26pfUk9PVA}"
 
