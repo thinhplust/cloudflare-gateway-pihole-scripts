@@ -12,7 +12,7 @@ fi
 
 LOGFILE="/root/logs/gclone-upload.log"
 FROM="/content/udemy-downloader/out_dir"
-TO="colab:{0AEb5NdRY8icDUk9PVA}"
+TO="colab:{0AEccOAma26pfUk9PVA}"
 
 # CHECK FOR FILES IN FROM FOLDER THAT ARE OLDER THAN 15 MINUTES
 if find $FROM* -type f -mmin +1 | read
