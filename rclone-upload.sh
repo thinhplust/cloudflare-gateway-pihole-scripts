@@ -14,12 +14,12 @@ FROM="/content/udemy-downloader/out_dir"
 TO="colab:{0AEccOAma26pfUk9PVA}"
 
 # CHECK FOR FILES IN FROM FOLDER THAT ARE OLDER THAN 15 MINUTES
-if find $FROM* -type f -mmin +1 | read
+if find $FROM* -type f -name "*.zip" -mmin +1 | read
   then
   start=$(date +'%s')
   echo "$(date "+%d.%m.%Y %T") GCLONE UPLOAD STARTED" | tee -a $LOGFILE
   # MOVE FILES OLDER THAN 10 MINUTES 
-  rclone move "$FROM" "$TO" --filter "- *.m4a" --transfers=5 --checkers=5 --delete-after --min-age 1m --log-file=$LOGFILE
+  rclone move "$FROM" "$TO" --filter "+ *.zip" --transfers=5 --checkers=5 --delete-after --min-age 1m --log-file=$LOGFILE
   echo "$(date "+%d.%m.%Y %T") GCLONE UPLOAD FINISHED IN $(($(date +'%s') - $start)) SECONDS" | tee -a $LOGFILE
 fi
 exit
